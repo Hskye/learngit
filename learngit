@@ -20,7 +20,38 @@
 	git status	
 	查看更改过的部分
 	git diff readme.txt
-	
+创建分支
+	创建并切换到dev分支
+	git checkout -b dev	
+	创建分支
+	git branch dev
+	切换分支
+	git checkout dev
+	查看分支
+	git branch
+	删除分支（-D强行删除）
+	git branch -d dev
+	合并分支到当前分支（需要先加载并且提交文件，然后切换到主干分支）
+	git add readme.txt commit -m "add my new feature"
+	git checkout master
+	git merge dev
+	丢弃分支（打算丢弃在分支里做的修改，首先加载并提交修改，然后移动到主干分支）
+	git add readme.txt commit -m "add my new feature"
+	git checkout master
+推送到远程代码库
+	第一次推送到远程代码库，配置
+	git remote add origin https://your_username@bitbucket.org/your_username/name_of_remote_repository.git
+	已经在本地的项目上工作了，只是想从远程代码库上取得它最新的版本
+	git pull origin master
+别名(使用如下命令最终得到eg: git c “some comment”代替git commit -m “some comment”)
+	git config --global alias.c 'commit -m'
+	git config --global alias.co 'checkout'
+	git config --global alias.cob 'checkout -b'
+	git config --global alias.br 'branch'
+	git config --global alias.m 'merge'
+	git config --global alias.a 'add .'
+	git config --global alias.s 'status'
+	git config --global alias.dbr 'branch -d'
 
 	git log//查看提交日志
 	git log --prefitty=oneline
@@ -32,13 +63,6 @@
 	git checkout -- test.txt//从版本库中恢复
 	git rm test.txt//版本库中删除
 	git commit -m "remove test.txt"//提交
-
-	git checkout -b dev//创建并切换到dev分支
-	git checkout dev//切换分支
-	git branch dev//创建分支
-	git branch//查看分支
-	git branch -d dev//删除分支，-D强行删除
-	git merge dev//合并分支到当前分支
 
 	git stash//离开正在编辑的文件去处理别的文件，保存工作区中的该文件
 	git stash list//查看刚才的工作现场
