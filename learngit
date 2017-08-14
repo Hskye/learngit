@@ -1,0 +1,47 @@
+安装Git(大多数Linux上，已经安装了Git)
+	git clone https://github.com/git/git
+设置Git（在我们能用Git工作之前，我们需要设置用户名，使Git能跟踪到谁做了修改）
+	git config --global user.email "skyecs@163.com"
+	git config --global user.name "jch"
+创建一个本地仓库
+	mkdir learngit
+	cd learngit/
+	初始化仓库
+	git init
+加载文件(提交到缓冲区stage)
+	所有文件、文件夹和子文件
+	git add .
+	添加特定文件
+	git add readme.txt
+提交文件（提交已加载staged的文件，附带有意义的注释）
+	提交为add distributed
+	git commit -m "add distributed"
+	询问Git状态，检查文件的提交（staged，unstaged）
+	git status	
+	查看更改过的部分
+	git diff readme.txt
+	
+
+	git log//查看提交日志
+	git log --prefitty=oneline
+	git reset --herd HEAD^//回到前一次修改，log中的相应记录也会被删除
+	git reset --herd 25ad6f60//数字为commit id的一部分
+	git reflog//查看修改git命令
+
+	rm test.txt//工作区中删除文件
+	git checkout -- test.txt//从版本库中恢复
+	git rm test.txt//版本库中删除
+	git commit -m "remove test.txt"//提交
+
+	git checkout -b dev//创建并切换到dev分支
+	git checkout dev//切换分支
+	git branch dev//创建分支
+	git branch//查看分支
+	git branch -d dev//删除分支，-D强行删除
+	git merge dev//合并分支到当前分支
+
+	git stash//离开正在编辑的文件去处理别的文件，保存工作区中的该文件
+	git stash list//查看刚才的工作现场
+	git stash pop//恢复现场
+	=git stash apply
+	 git stash drop//删除stash中的内容
